@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏠 House Price Predictor</h1>
+
+        <form action="/predict" method="post">
+
+            <input type="number" step="any" name="RM" placeholder="Average Rooms (RM)" required>
+
+            <input type="number" step="any" name="LSTAT" placeholder="% Lower Status Population (LSTAT)" required>
+
+            <input type="number" step="any" name="PTRATIO" placeholder="Pupil-Teacher Ratio (PTRATIO)" required>
+
+            <input type="number" step="any" name="INDUS" placeholder="Non-retail Business Acres (INDUS)" required>
+
+            <input type="number" step="any" name="TAX" placeholder="Property Tax Rate (TAX)" required>
+
+            <input type="number" step="any" name="NOX" placeholder="Nitric Oxide Level (NOX)" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
